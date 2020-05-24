@@ -9,10 +9,27 @@ export default class Home extends React.Component {
   constructor() {
     super();
     this.state = {
-      step: 0,
-      personal: {},
-      nameAddress: {},
-      questionnaire: {},
+      personal: {
+        DOB: '',
+        SSN: '',
+        DL: '',
+        rental: '',
+        gender:''
+      },
+      nameAddress: {
+        name:'',
+        address:'',
+        city:'',
+        state:'',
+        zip:''
+      },
+      questionnaire: {
+        jobChange:'',
+            experience:'',
+            skill:'',
+            location:'',
+            salary:'',
+      },
     };
   }
   getQuestionnaire=()=>this.state.questionnaire;
@@ -35,24 +52,36 @@ export default class Home extends React.Component {
       nameAddress: nameAddress,
     });
   };
-  goHome = () => {
+  
+  resetSurvey = () => {
     this.setState({
-      step: 0,
-    });
-  };
-  goToPrevStep = () => {
-    this.setState({
-      step: this.state.step - 1,
-    });
-  };
-  goToNextStep = () => {
-    this.setState({
-      step: this.state.step + 1,
+        step: 0,
+        personal: {
+          DOB: '',
+          SSN: '',
+          DL: '',
+          rental: '',
+          gender:''
+        },
+        nameAddress: {
+          name:'',
+          address:'',
+          city:'',
+          state:'',
+          zip:''
+        },
+        questionnaire: {
+          jobChange:'',
+              experience:'',
+              skill:'',
+              location:'',
+              salary:'',
+        },
     });
   };
   render() {
     let view;
-    switch (this.state.step) {
+    switch (this.props.step) {
       case 0:
         view = (
           <PersonalData
@@ -83,27 +112,11 @@ export default class Home extends React.Component {
         />
     }
 
-    if(this.state.step>0){
-        return (
-            <div>
-                <h1>Welcome to Survey Donkey</h1>
-                <button onClick={this.goHome}>Home</button>
-                {view}
-                <button onClick={this.goToPrevStep}>Prev</button>
-                <button onClick={this.goToNextStep}>Next</button>
-            </div>
-        )
-    }
-    else{
-        return (
-            <div>
-                <h1>Welcome to Survey Donkey</h1>
-                <button onClick={this.goHome}>Home</button>
-                {view}
-                <button onClick={this.goToNextStep}>Next</button>
-               
-            </div>
-        )
-    }
+    return (
+      <div>
+        <button className="btn-warning" onClick={this.resetSurvey}>Reset Survey</button>
+      {view}
+      </div>
+      )
   }
 }

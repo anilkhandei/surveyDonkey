@@ -1,38 +1,107 @@
-.App {
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.container{
+  margin: auto;
+  width: 50vw;
+  border-radius:5px ;
+  background-color: #e9ecef;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+  0px 2px 2px 0px rgba(0,0,0,0.14),
+  0px 1px 5px 0px rgba(0,0,0,0.12);
+  position: relative;
+}
+header{
+  margin:20px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button{
+  padding:10px;
+  margin: 10px;
+  border-radius: 5px ;
+  background-color: #e0e0e0;
+  border:0px;
+  cursor: pointer;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+  0px 2px 2px 0px rgba(0,0,0,0.14),
+  0px 1px 5px 0px rgba(0,0,0,0.12);
+  outline: 0px;
+  font-weight: bold;
+}
+button:hover{
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+  0px 2px 2px 0px rgba(0,0,0,0.14),
+  0px 1px 5px 0px rgba(0,0,0,0.12);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-success{
+  background-color: #caffbf;
+  color: rgb(138, 130, 130);
+}
+.btn-warning{
+  background-color: #ffbf69;
+  color: #f07167;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: rgb(138, 130, 130);
+}
+
+.btn-icon{
+  background-color: rgb(91, 81, 228);
+  color: #fff;
+}
+.btn-nav{
+  background-color: #ffadad;
+  color: #fff;
+}
+input{
+  border:0;
+  outline: 0;
+  background-color: inherit;
+  border-bottom: 1px solid #9381ff;
+  font-weight: bold;
+  height: 5vh;
+  padding: 0.5rem;
+}
+form{
+  text-align: center;
+}
+
+.card{
+  margin: 1rem;
+  background-color: #A3CEF1;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2),
+  0px 2px 2px 0px rgba(0,0,0,0.14),
+  0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.card-header{
+  background-color: #6096BA;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color:#FFFFFF;
+}
+
+span{
+  font-weight: bold;
+  line-height: 2rem;
+  padding: 1rem;
+}
+
+.label-response{
+  color:#274C77;
+  font-weight: bolder;
+  text-transform: capitalize;
 }
